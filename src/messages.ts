@@ -5,7 +5,7 @@
 export const msg = {
   noApiKey:
     "کلید API پیدا نشد. فایل ‎.env‎ را بساز (‎cp .env.example .env‎) و GOOGLE_GENERATIVE_AI_API_KEY را داخلش بگذار.",
-  noFfmpeg: "ffmpeg پیدا نشد. نصبش کن: brew install ffmpeg",
+  noFfmpeg: "ffmpeg پیدا نشد. نصبش کن: brew install ffmpeg (لینوکس: sudo apt install ffmpeg)",
   unsupportedPlatform: (p: string) =>
     `این سیستم‌عامل (${p}) هنوز پشتیبانی نمی‌شود. CONTRIBUTING.md را ببین.`,
 
@@ -26,6 +26,7 @@ export const msg = {
   apiFailed: (detail: string) => `خطا از سمت Gemini:\n${detail}`,
 
   copied: "✅ روی کلیپ‌بورد است.",
+  noClipboardTool: "ابزار کلیپ‌بورد پیدا نشد. نصب کن: wl-clipboard (Wayland) یا xclip (X11).",
   copyFailed: (detail: string) => `کپی روی کلیپ‌بورد نشد: ${detail}`,
 
   devicesTitle: "میکروفون‌هایی که ffmpeg می‌بیند:",

@@ -89,7 +89,7 @@ async function main(): Promise<number> {
         mode: command.stop,
         stopFile: cfg.stopFile,
         // The floating card reads these from stdout to draw its level meter.
-        onLevel: hold ? (db) => process.stdout.write(`LEVEL:${db.toFixed(1)}\n`) : undefined,
+        onLevel: hold ? (db) => process.stdout.write(`LEVEL:${Math.max(db, -100).toFixed(1)}\n`) : undefined,
       });
       if (r.hitMax) say(msg.maxReached(cfg.maxSeconds));
     } catch (e) {

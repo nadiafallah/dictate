@@ -8,7 +8,11 @@ Thanks for looking. The project is small on purpose; please keep it that way.
    and `ui/windows-autohotkey/dictate.ahk` are written but have never run. Try
    `npm run dictate -- --list`, a recording, and the hotkeys, and open an issue
    with what happened (including ffmpeg's output).
-2. **Linux.** Not written yet. It is one file. See below.
+2. **A Linux hotkey UI.** The Linux backend (`src/platform/linux.ts`) works
+   from the command line. What's missing is the equivalent of the Hammerspoon
+   card: a small script bound to a desktop keybinding that runs `--hold`, touches
+   the stop file on the second press, and runs `--again`. It can read `LEVEL:<dB>`
+   lines from stdout for a meter.
 
 ## Adding a platform
 
@@ -23,15 +27,10 @@ interface Platform {
 }
 ```
 
-To add Linux:
-
-1. Create `src/platform/linux.ts`. `macos.ts` is the reference.
-   - Input: `["-f", "pulse", "-i", mic ?? "default"]` works on PulseAudio and PipeWire.
-   - Devices: `pactl list short sources`.
-   - Clipboard: `wl-copy` on Wayland, `xclip -selection clipboard` on X11. Pass
-     UTF-8 explicitly (see the pbcopy comment in `macos.ts` for why).
-2. Return it from `getPlatform()` in `src/platform/index.ts`.
-3. Add a parser test next to the existing ones in `test/`.
+`src/platform/linux.ts` is the shortest complete example: PulseAudio input,
+`pactl` for the device list, and `wl-copy`/`xclip`/`xsel` for the clipboard. To
+add another platform, write one file like it, return it from `getPlatform()` in
+`src/platform/index.ts`, and add a parser test in `test/`.
 
 Recording, the silence gate, the Gemini call and the retry logic are shared and
 should not need to change.

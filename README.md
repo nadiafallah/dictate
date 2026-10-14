@@ -17,8 +17,9 @@ Ctrl+Alt+R   that came out wrong — transcribe the same audio again
 
 > **Status:** built and tested on **macOS**. The **Windows** code is written but
 > has never run on an actual Windows machine — if you have one, try it and open
-> an issue. Linux is not written yet; [CONTRIBUTING.md](CONTRIBUTING.md) explains
-> how to add it (it is one file).
+> an issue. On **Linux** the command line works (PulseAudio/PipeWire, and
+> `wl-copy` or `xclip` for the clipboard), but there is no hotkey UI yet;
+> [CONTRIBUTING.md](CONTRIBUTING.md) explains how to add one.
 
 ## Why it exists
 
@@ -34,7 +35,7 @@ lives in one file, [`src/messages.ts`](src/messages.ts).
 
 ## Requirements
 
-- [Node.js](https://nodejs.org) 20+ and ffmpeg (`brew install ffmpeg`)
+- [Node.js](https://nodejs.org) 20+ and ffmpeg (`brew install ffmpeg`; Linux: `apt install ffmpeg`)
 - A free Gemini API key from [Google AI Studio](https://aistudio.google.com/apikey)
 - [Hammerspoon](https://www.hammerspoon.org) — only for the hotkeys and the floating card (Windows: AutoHotkey v2)
 
@@ -159,9 +160,10 @@ Ctrl+Alt+R   اشتباه نوشت؟ همان صدا را دوباره تبدی�
 ```
 
 > **وضعیت:** روی **macOS** ساخته و تست شده. کد **ویندوز** نوشته شده ولی هنوز روی
-> ویندوز واقعی اجرا نشده — اگر ویندوز داری تستش کن و issue بزن. لینوکس هنوز
-> نوشته نشده و [CONTRIBUTING.md](CONTRIBUTING.md) می‌گوید چطور اضافه‌اش کنی
-> (یک فایل است).
+> ویندوز واقعی اجرا نشده — اگر ویندوز داری تستش کن و issue بزن. روی **لینوکس**
+> خط فرمان کار می‌کند (PulseAudio/PipeWire، و ‎`wl-copy`‎ یا ‎`xclip`‎ برای
+> کلیپ‌بورد) ولی هنوز هات‌کی ندارد؛ [CONTRIBUTING.md](CONTRIBUTING.md) می‌گوید
+> چطور اضافه‌اش کنی.
 
 ## چرا ساخته شد
 
