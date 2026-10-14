@@ -1,0 +1,27 @@
+{
+  "name": "dictate",
+  "version": "0.1.0",
+  "description": "Press a key, talk, paste. Persian-first local dictation via Gemini.",
+  "type": "module",
+  "private": true,
+  "license": "MIT",
+  "author": "Siavash Samimifard",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "dictate": "tsx src/cli.ts",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@google/genai": "^2.29.1",
+    "dotenv": "^18.0.8"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.5",
+    "tsx": "^4.23.15",
+    "typescript": "^7.0.2",
+    "vitest": "^5.0.4"
+  }
+}

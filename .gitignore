@@ -1,0 +1,4 @@
+node_modules/
+.env
+*.ogg
+.DS_Store
